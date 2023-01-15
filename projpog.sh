@@ -17,7 +17,7 @@ then
                 a="obase=${lista[$z]};ibase=$sys1;$wartosc"
                 echo $a | bc
         done
-                sleep 10
+                read -p "Nacisnij enter aby zakonczyc dzialanie programu"
 elif [ $wybor == 2 ]
 then
 	printf "w odstepach podaj systemy, ktore beda uzyte do wyliczen (system obliczy wartosci w kolejnosci od pierwszej do ostatniej) \n"
@@ -62,8 +62,8 @@ then
 	printf "W jakim systemie ma byc wyswietlony wynik\n"
         read -r finalbase
 	finalres=$(bc <<< "obase=$finalbase;ibase=10;$a")
-        printf "wynik w systemie $finalbase to: $finalres"
-	sleep 5
+        printf "wynik w systemie $finalbase to: $finalres\n"
+	read -p "Nacisnij enter aby zakonczyc dzialanie programu"
 else
         printf "bledna wartosc"
 	sleep 5
